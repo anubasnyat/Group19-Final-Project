@@ -84,7 +84,7 @@ function filterList (array, filterInputValue) {
 function initMap() {
   console.log('initMap');
   const map = L.map('map').setView([38.9897, -76.9378], 13);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  L.tileLayer('https://www.atlistmaps.com/showcase/nba-team-map-all-30-teams-on-a-map', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
   }).addTo(map);
@@ -127,7 +127,7 @@ async function mainEvent() {
       This next line goes to the request for 'GET' in the file at /server/routes/foodServiceRoutes.js
       It's at about line 27 - go have a look and see what we're retrieving and sending back.
      */
-  const results = await fetch('/api/foodServicePG');
+  const results = await fetch('https://api-nba-v1.p.rapidapi.com/teams');
   const arrayFromJson = await results.json(); // here is where we get the data from our request as JSON
 
   /*
